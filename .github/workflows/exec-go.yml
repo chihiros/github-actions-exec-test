@@ -1,0 +1,19 @@
+# name: /hello がの中身が変更された時に実行される
+# name: .go が変更された時に実行される
+
+name: main.go 🐹 を実行します
+
+on: push
+
+jobs:
+  deploy:
+    name: Exec
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Exec main.go
+      run: |
+        go run main.go
